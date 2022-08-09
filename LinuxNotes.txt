@@ -1,0 +1,15 @@
+Check os version
+   
+   cat /etc/os-release
+
+Package Manager Tools:
+
+   Redhat: yum, dnf
+      
+      Examples: yum install nginx
+                dnf install nginx
+
+Print top 10 lines:
+   
+       head -10 file.yaml
+

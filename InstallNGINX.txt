@@ -1,0 +1,19 @@
+#Ref: https://www.nginx.com/resources/wiki/start/topics/tutorials/install/
+
+Create a repo file:
+  /etc/yum.repos.d/nginx.repo
+
+Add these contents:
+    [nginx]
+    name=nginx repo
+    baseurl=https://nginx.org/packages/rhel/$releasever/$basearch/
+    gpgcheck=0
+    enabled=1
+
+    Replace $releaseserver with 8
+
+Install nginx:
+    sudo yum install nginx
+
+Upgrading NGINX on RHEL 8
+    dnf module enable nginx:1.20
