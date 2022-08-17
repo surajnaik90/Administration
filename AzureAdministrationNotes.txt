@@ -1,3 +1,4 @@
 17/8/2022
 
 -Update Management using Azure Automation Account
+    It uses inbuilt Runbooks to report the vulnerabilities and also the updates
