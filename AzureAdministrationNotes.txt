@@ -2,3 +2,7 @@
 
 -Update Management using Azure Automation Account
     It uses inbuilt Runbooks to report the vulnerabilities and also the updates
+    
+    Exception:
+    Failed to start, as hybrid worker was not available when scheduled job started, the hybrid worker was last active at 7/19/2022 7:35:35 PM UTC. For more details, see: https://aka.ms/FailedToStartJob
+
