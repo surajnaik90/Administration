@@ -21,7 +21,7 @@
 
 
 $filePath = ".\triggers.csv"
-$resourceGroup = "bieno-da05-p-80010-rg"
+$resourceGroup = "prod-rg"
 
 if (Test-Path $filePath) {
 
