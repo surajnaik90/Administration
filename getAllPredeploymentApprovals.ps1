@@ -13,7 +13,7 @@ $base64AuthInfo= [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.
 $headers = @{Authorization=("Basic {0}" -f $base64AuthInfo)}
 
 $orgURI = "https://vsrm.dev.azure.com/$($organization)/"
-$projectsURI = "https://dev.azure.com/$($organization)/" + "_apis/projects"
+$projectsURI = "https://dev.azure.com/$($organization)/" + "_apis/projects?api-version=6.0"
 
 #Retrieve all the projects
 $projects = Invoke-RestMethod -Uri $projectsURI -Method Get -Headers $headers
