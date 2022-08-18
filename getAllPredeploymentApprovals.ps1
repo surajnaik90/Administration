@@ -13,7 +13,7 @@ $base64AuthInfo= [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.
 $headers = @{Authorization=("Basic {0}" -f $base64AuthInfo)}
 
 $orgURI = "https://vsrm.dev.azure.com/$($organization)/"
-$projectsURI = $orgURI + "_apis/projects"
+$projectsURI = "https://dev.azure.com/$($organization)/" + "_apis/projects"
 
 #Retrieve all the projects
 $projects = Invoke-RestMethod -Uri $projectsURI -Method Get -Headers $headers
@@ -46,8 +46,11 @@ foreach($project in $projects.value) {
 
         foreach($env in $definitionInfo.environments) {
             
+            $envName = $env.name
+            
             foreach($approval in $env.preDeployApprovals.approvals) {
                 
+                [void]$approverNames.Append($envName)
                 [void]$approverNames.Append($approval.approver.displayName)
                 [void]$approverNames.Append(";")
                 [void]$approverIDs.Append($approval.approver.uniqueName)
@@ -55,8 +58,8 @@ foreach($project in $projects.value) {
             }
         }
 
-        $defInfo.Add("ApproverName", $approverNames.ToString());
-        $defInfo.Add("ApproverID", $approverIDs.ToString());
+        $defInfo.Add("ApproverName", $approverNames.ToString().Replace("`n",","));
+        $defInfo.Add("ApproverID", $approverIDs.ToString().Replace("`n",","));
 
         $psCustomObject = [pscustomobject]$defInfo
         $releaseDefApprovers.Add($psCustomObject);
