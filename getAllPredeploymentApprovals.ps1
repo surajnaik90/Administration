@@ -58,8 +58,8 @@ foreach($project in $projects.value) {
             }
         }
 
-        $defInfo.Add("ApproverName", $approverNames.ToString().Replace("`n",","));
-        $defInfo.Add("ApproverID", $approverIDs.ToString().Replace("`n",","));
+        $defInfo.Add("ApproverName", $approverNames.ToString());
+        $defInfo.Add("ApproverID", $approverIDs.ToString());
 
         $psCustomObject = [pscustomobject]$defInfo
         $releaseDefApprovers.Add($psCustomObject);
