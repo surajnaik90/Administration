@@ -50,8 +50,8 @@ foreach($project in $projects.value) {
                 
                 [void]$approverNames.Append($approval.approver.displayName)
                 [void]$approverNames.Append(";")
-                [void]$approverIDs.AppendLine($approval.approver.uniqueName)
-                [void]$approverIDs.AppendLine(";")
+                [void]$approverIDs.Append($approval.approver.uniqueName)
+                [void]$approverIDs.Append(";")
             }
         }
 
