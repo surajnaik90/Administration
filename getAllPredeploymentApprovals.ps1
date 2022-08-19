@@ -52,9 +52,7 @@ foreach($project in $projects.value) {
                 
                 [void]$approverNames.Append($envName)
                 [void]$approverNames.Append($approval.approver.displayName)
-                [void]$approverNames.Append(";")
                 [void]$approverIDs.Append($approval.approver.uniqueName)
-                [void]$approverIDs.Append(";")
             }
         }
 
