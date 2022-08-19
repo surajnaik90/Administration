@@ -67,4 +67,4 @@ foreach($project in $projects.value) {
 
 }
 
-$releaseDefApprovers | Export-Csv -Path $filePath -NoTypeInformation -Append
+$releaseDefApprovers | Export-Csv -Path $filePath -NoTypeInformation
