@@ -1,6 +1,6 @@
 Generate OAuth2 token using Postman/JMeter
 
-Serername or IP: login.microsoftonline.com
+Servername or IP: login.microsoftonline.com
 https path: {tenantID}/oauth2/v2.0/token
 Request type: POST
 
