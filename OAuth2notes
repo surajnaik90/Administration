@@ -16,4 +16,4 @@ scope:openid api://{clientid}/.default
 client_id & client_secret are the AAD app registration credentials from Azure.
 
 With that we get an access_token http responselike this:
-{"token_type":"Bearer","expires_in":3599,"ext_expires_in":3599,"access_token":"{accesstoke}"}
+{"token_type":"Bearer","expires_in":3599,"ext_expires_in":3599,"access_token":"{accesstoken}"}
