@@ -1,0 +1,19 @@
+Generate OAuth2 token using Postman/JMeter
+
+Serername or IP: login.microsoftonline.com
+https path: {tenantID}/oauth2/v2.0/token
+Request type: POST
+
+So, the entire URL should look like this: https://login.microsoftonline.com/{OAuth2}/oauth2/v2.0/token
+
+Please pass the below http parameters aspart of the request:
+
+grant_type:client_credentials
+client_id:{clientid}
+client_secret:{client_secret}
+scope:openid api://{clientid}/.default
+
+client_id & client_secret are the AAD app registration credentials from Azure.
+
+With that we get an access_token http responselike this:
+{"token_type":"Bearer","expires_in":3599,"ext_expires_in":3599,"access_token":"{accesstoke}"}
