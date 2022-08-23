@@ -4,7 +4,7 @@ Serername or IP: login.microsoftonline.com
 https path: {tenantID}/oauth2/v2.0/token
 Request type: POST
 
-So, the entire URL should look like this: https://login.microsoftonline.com/{OAuth2}/oauth2/v2.0/token
+So, the entire URL should look like this: https://login.microsoftonline.com/{tenantID}/oauth2/v2.0/token
 
 Please pass the below http parameters aspart of the request:
 
