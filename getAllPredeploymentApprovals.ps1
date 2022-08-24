@@ -72,7 +72,7 @@ foreach($project in $projects.value) {
         Write-Host $releaseDefinition.name
     }
 
-    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i
+    Write-Progress -Activity "In Progress" -Status "$i% Complete:" -PercentComplete $i
 }
 
 $releaseDefApprovers | Export-Csv -Path $filePath -NoTypeInformation
