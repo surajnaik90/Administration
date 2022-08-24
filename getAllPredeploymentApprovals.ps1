@@ -53,7 +53,6 @@ foreach($project in $projects.value) {
         $defInfo.Add("ReleaseDefinitionName", $definitionInfo.name);
 
         $approverNames = [System.Text.StringBuilder]::new()
-        $approverIDs =  [System.Text.StringBuilder]::new()
 
         foreach($env in $definitionInfo.environments) {
             
