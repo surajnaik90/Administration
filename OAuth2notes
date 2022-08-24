@@ -6,7 +6,9 @@ Request type: POST
 
 So, the entire URL should look like this: https://login.microsoftonline.com/{tenantID}/oauth2/v2.0/token
 
-Please pass the below http parameters aspart of the request:
+Please pass the below http parameters as part of the request:
+
+1) Approach is to create using Azure AD app's credentials. 
 
 grant_type:client_credentials
 client_id:{clientid}
@@ -17,3 +19,14 @@ client_id & client_secret are the AAD app registration credentials from Azure.
 
 With that we get an access_token http responselike this:
 {"token_type":"Bearer","expires_in":3599,"ext_expires_in":3599,"access_token":"{accesstoken}"}
+
+
+2) Another approach to generate the OAuth 2 token using user credentials
+
+grant_type: password
+client_id : {clientid}
+username : {username}
+password: {password}
+scope: openid api://{clientid}/.default
+
+In this case, user account should be MFA disabled.
