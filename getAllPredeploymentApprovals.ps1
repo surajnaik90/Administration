@@ -8,7 +8,7 @@
 $filePath = ".\approvers.csv"
 
 $organization = "org"
-$personalAccessToken = "pattoken"
+$personalAccessToken = "pat-token"
 $base64AuthInfo= [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(":$($personalAccessToken)"))
 $headers = @{Authorization=("Basic {0}" -f $base64AuthInfo)}
 
@@ -19,8 +19,11 @@ $projectsURI = "https://dev.azure.com/$($organization)/" + "_apis/projects?api-v
 $projects = Invoke-RestMethod -Uri $projectsURI -Method Get -Headers $headers
 
 $releaseDefApprovers = New-Object System.Collections.Generic.List[System.Object]
+
+$i=0
 foreach($project in $projects.value) {
 
+    $i= $i + 1
     $projectName = $project.name
 
     $releaseDefinitionsURI = $orgURI + "$($projectName)/_apis/release/definitions?api-version=7.1-preview.4"
@@ -34,30 +37,34 @@ foreach($project in $projects.value) {
         $defUri =  $orgURI + "$($projectName)/_apis/release/definitions/$($definitionID)?api-version=7.1-preview.4"
         $definitionInfo = Invoke-RestMethod -Uri $defUri -Method Get -Headers $headers
 
+        $releaseUri = $orgURI + "$($projectName)/_apis/release/releases?definitionId=$($definitionID)&api-version=7.1-preview.8"
+        $releasesInfo = Invoke-RestMethod -Uri $releaseUri -Method Get -Headers $headers
+
+        $reason = [string]::Empty
+        foreach($release in $releasesInfo.value) {
+            $reason = $release.reason
+            break
+        }
+
         $defInfo = [ordered]@{}
 
         $defInfo.Add("AccountName", $organization);
         $defInfo.Add("ProjectName", $projectName);
         $defInfo.Add("ReleaseDefinitionName", $definitionInfo.name);
-        $defInfo.Add("ReleaseDefinitionURL", $definitionInfo.url);
 
         $approverNames = [System.Text.StringBuilder]::new()
         $approverIDs =  [System.Text.StringBuilder]::new()
 
         foreach($env in $definitionInfo.environments) {
             
-            $envName = $env.name
-            
             foreach($approval in $env.preDeployApprovals.approvals) {
                 
-                [void]$approverNames.Append($envName)
                 [void]$approverNames.Append($approval.approver.displayName)
-                [void]$approverIDs.Append($approval.approver.uniqueName)
             }
         }
 
         $defInfo.Add("ApproverName", $approverNames.ToString());
-        $defInfo.Add("ApproverID", $approverIDs.ToString());
+        $defInfo.Add("TriggerType", $reason);
 
         $psCustomObject = [pscustomobject]$defInfo
         $releaseDefApprovers.Add($psCustomObject);
@@ -65,6 +72,7 @@ foreach($project in $projects.value) {
         Write-Host $releaseDefinition.name
     }
 
+    Write-Progress -Activity "Search in Progress" -Status "$i% Complete:" -PercentComplete $i
 }
 
 $releaseDefApprovers | Export-Csv -Path $filePath -NoTypeInformation
