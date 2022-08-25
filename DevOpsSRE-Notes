@@ -1,0 +1,4 @@
+DevOps - It is about building culture, practices so as to deliver things faster. 
+SRE - An implementation of DevOps. When we treat operation as a software it's a SRE.
+
+Ansible playbook to join VM to domain.
