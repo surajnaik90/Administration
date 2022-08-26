@@ -1,4 +1,26 @@
 DevOps - It is about building culture, practices so as to deliver things faster. 
 SRE - An implementation of DevOps. When we treat operation as a software it's a SRE.
 
+
+Toil based automation:
+   - Automate manual tasks.
+   - Automate interrupt driven or reactive tasks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ansible playbook to join VM to domain.
