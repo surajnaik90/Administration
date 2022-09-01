@@ -9,3 +9,6 @@
 Autoamtion account & VM mapping
 
 Log Analytics - Dynatrace
+
+
+Issue: /var/opt/microsoft/omsagent/log/urp.log update agent issue
