@@ -13,3 +13,5 @@ Print top 10 lines:
    
        head -10 file.yaml
 
+chmod 664 - sets read and write permissions
+
