@@ -41,7 +41,6 @@ $body = '{
 
 #This line is necessary, else it will timeout by giving this issue:
 #Invoke-RestMethod : The underlying connection was closed: An unexpected error occurred on a receive.
-
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $UsageData = Invoke-RestMethod `
