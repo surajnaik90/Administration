@@ -1,3 +1,8 @@
+#References:
+#https://stackoverflow.com/questions/63351588/azure-billing-rest-api
+#https://stackoverflow.com/questions/66050990/the-underlying-connection-was-closed-an-unexpected-error-occurred-on-a-receive
+#https://docs.microsoft.com/en-us/rest/api/cost-management/query/usage?tabs=HTTP#querydataset
+
 $resourceUrl="https://management.azure.com/"
 $tenantId="tenant-Id"
 $clientId="client-Id"
