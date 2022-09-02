@@ -15,3 +15,4 @@ Issue: /var/opt/microsoft/omsagent/log/urp.log update agent issue
 
 
 https://stackoverflow.com/questions/63351588/azure-billing-rest-api
+https://stackoverflow.com/questions/66050990/the-underlying-connection-was-closed-an-unexpected-error-occurred-on-a-receive
