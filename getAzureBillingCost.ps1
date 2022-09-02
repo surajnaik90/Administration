@@ -1,3 +1,17 @@
+$resourceUrl="https://management.azure.com/"
+$tenantId="tenant-Id"
+$clientId="client-Id"
+$clientSecret="client-secret"
+$securedSecret = ConvertTo-SecureString $clientSecret -AsPlainText -Force
+
+$pscredential = New-Object System.Management.Automation.PSCredential ($clientId, $securedSecret)
+
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
+$context = Get-AzContext
+
+$token = [Microsoft.Azure.Commands.Common.Authentication.AzureSession]::Instance.AuthenticationFactory.Authenticate($context.Account, `
+$context.Environment, $context.Tenant.Id.ToString(), $null, [Microsoft.Azure.Commands.Common.Authentication.ShowDialog]::Never, $null, $resourceUrl).AccessToken
+
 $usageURL = "https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.CostManagement/query?api-version=2021-10-01"
 
 $header = @{
