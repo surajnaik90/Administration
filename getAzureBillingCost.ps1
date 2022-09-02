@@ -1,4 +1,4 @@
-$usageURL = "https://management.azure.com/subscriptions/2bfd3de9-2a40-48e1-be7e-1f0d92dcde4b/providers/Microsoft.CostManagement/query?api-version=2021-10-01"
+$usageURL = "https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.CostManagement/query?api-version=2021-10-01"
 
 $header = @{
     'Authorization' = "Bearer $($token)"
