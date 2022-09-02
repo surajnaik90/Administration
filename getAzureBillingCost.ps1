@@ -19,7 +19,7 @@ $body = '{
     "grouping": [
       {
         "type": "Dimension",
-        "name": "ResourceGroup"
+        "name": "ResourceGroup"  #Change it to "MeterCategory" for resource level data
       }
     ]
   }
