@@ -7,8 +7,8 @@ $securedSecret = ConvertTo-SecureString $clientSecret -AsPlainText -Force
 $pscredential = New-Object System.Management.Automation.PSCredential ($clientId, $securedSecret)
 
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
-$context = Get-AzContext
 
+$context = Get-AzContext
 $token = [Microsoft.Azure.Commands.Common.Authentication.AzureSession]::Instance.AuthenticationFactory.Authenticate($context.Account, `
 $context.Environment, $context.Tenant.Id.ToString(), $null, [Microsoft.Azure.Commands.Common.Authentication.ShowDialog]::Never, $null, $resourceUrl).AccessToken
 
