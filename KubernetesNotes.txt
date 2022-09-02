@@ -4,3 +4,7 @@ az aks get-credentials --resource-group "" --name ""
 
 kubectl config view
 
+kubectl get pods --namespace ""
+
+//Accessing the dashboard
+kubectl proxy
