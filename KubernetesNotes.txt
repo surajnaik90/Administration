@@ -1,0 +1,6 @@
+az account set --subscription "subscription-id"
+
+az aks get-credentials --resource-group "" --name ""
+
+kubectl config view
+
