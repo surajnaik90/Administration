@@ -14,3 +14,7 @@ After deploying the dashboard:
 kubectl get serviceaccounts/kubernetes-dashboard -o yaml --namespace kubernetes-dashboard
 
 kubectl get secret secret-name -o yaml --namespace kubernetes-dashboard
+
+
+Kubeconfig location:
+C:\Users\suraj\.kube\config
