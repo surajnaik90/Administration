@@ -1,1 +1,9 @@
 https://prometheus.io/
+
+What it is?
+- Event monitoring and alerting
+- Records metrics in a time-series database
+
+What it can do?
+ - Machine centric
+ - Service related data as well
