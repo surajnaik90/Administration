@@ -12,3 +12,13 @@ Log Analytics - Dynatrace
 
 
 Issue: /var/opt/microsoft/omsagent/log/urp.log update agent issue
+
+
+Get Role assignments for a resource
+Get-AzRoleAssignment -ResourceGroupName "" -ResourceName "" -ResourceType "Microsoft.Cache/redis" | Export-
+
+
+$res = Get-AzureADObjectByObjectId -ObjectIds $objectId.ObjectId
+
+
+$res.DisplayName
