@@ -15,3 +15,5 @@ Print top 10 lines:
 
 chmod 664 - sets read and write permissions
 
+#Deleter all files and folders in a directory linux
+rm -r ** -f
