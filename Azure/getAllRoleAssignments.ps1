@@ -18,11 +18,9 @@ $filePath = ".\roleAssignments.csv"
 $roleAssignments = New-Object System.Collections.Generic.List[System.Object]
 
 $resourceGroupNames = Get-AzResourceGroup | Select-Object ResourceGroupName, Location, Tags
-
 foreach($resourceGroup in $resourceGroupNames) {
 
     $resources = Get-AzResource -ResourceGroupName $resourceGroup.ResourceGroupName
-
     foreach($resource in $resources){
 
         $getRoleAssignments = Get-AzRoleAssignment -ResourceGroupName $resourceGroup.ResourceGroupName `
