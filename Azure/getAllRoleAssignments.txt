@@ -1,55 +1,50 @@
+class RoleAssignment {
+    [string]$ResourceGroupName
+    [string]$Location
+    [string]$Tags
+    [string]$ResourceName
+    [string]$ResourceType
+    [string]$RoleAssignmentName
+    [string]$RoleDefinitionName
+    [string]$Scope
+    [string]$DisplayName
+}
+
+
 $filePath = ".\roleAssignments.csv"
 $roleAssignments = New-Object System.Collections.Generic.List[System.Object]
 
 $resourceGroupNames = Get-AzResourceGroup | Select-Object ResourceGroupName, Location, Tags
 
 foreach($resourceGroup in $resourceGroupNames) {
-    
-    $rgInfo = [ordered]@{}
-    $resourceList = New-Object System.Collections.Generic.List[System.Object]
-
-    $rgInfo.Add("ResourceGroupName", $resourceGroup.ResourceGroupName);
-    $rgInfo.Add("Location", $resourceGroup.Location);
-    $rgInfo.Add("Tags", $resourceGroup.Tags);
 
     $resources = Get-AzResource -ResourceGroupName $resourceGroup.ResourceGroupName
+
     foreach($resource in $resources){
-        
-        $resourceInfo = [ordered]@{}
-        $roleassignmentList = New-Object System.Collections.Generic.List[System.Object]
 
         $getRoleAssignments = Get-AzRoleAssignment -ResourceGroupName $resourceGroup.ResourceGroupName `
                                 -ResourceName $resource.Name -ResourceType $resource.ResourceType
         
-        $resourceInfo.Add("ResourceName", $resource.Name);
-        $resourceInfo.Add("ResourceType", $resource.ResourceType);
 
         foreach($roleassignment in $getRoleAssignments){
 
-            $roleAssignmentInfo = [ordered]@{}
-            
-            $roleAssignmentInfo.Add("RoleAssignmentName", $roleassignment.RoleAssignmentName);
-            $roleAssignmentInfo.Add("RoleDefinitionName", $roleassignment.RoleDefinitionName);
-            $roleAssignmentInfo.Add("Scope", $roleassignment.Scope);
-
             $result = Get-AzureADObjectByObjectId -ObjectIds $roleassignment.ObjectId
 
-            $roleAssignmentInfo.Add("DisplayName", $result.DisplayName);
+            $roleAssignmentInfo = [RoleAssignment]::new()
 
-            $psCustomObject = [pscustomobject]$roleAssignmentInfo
-            $roleassignmentList.Add($psCustomObject);
+            $roleAssignmentInfo.ResourceGroupName = $resourceGroup.ResourceGroupName
+            $roleAssignmentInfo.Location = $resourceGroup.Location
+            $roleAssignmentInfo.Tags = $resourceGroup.Tags
+            $roleAssignmentInfo.ResourceName = $resource.Name
+            $roleAssignmentInfo.ResourceType = $resource.ResourceType
+            $roleAssignmentInfo.RoleAssignmentName = $roleassignment.RoleAssignmentName
+            $roleAssignmentInfo.RoleDefinitionName = $roleassignment.RoleDefinitionName
+            $roleAssignmentInfo.Scope = $roleassignment.Scope
+            $roleAssignmentInfo.DisplayName = $result.DisplayName
+
+            $roleAssignments.Add($roleAssignmentInfo)
         }
-
-        $resourceInfo.Add("RoleAssignmentList", $roleassignmentList);
-
-        $psCustomObject = [pscustomobject]$resourceInfo
-        $resourceList.Add($psCustomObject);
     }
-
-    $rgInfo.Add("ResourceNamesList", $resourceList);
-
-    $psCustomObject = [pscustomobject]$rgInfo
-    $roleAssignments.Add($psCustomObject);
 }
 
 $roleAssignments | Export-Csv -Path $filePath -NoTypeInformation
