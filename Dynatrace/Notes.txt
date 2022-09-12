@@ -1,0 +1,6 @@
+Dynatrace ----> Azure Monitor ----> AKS
+
+ActiveGate of Dynatrace should connect to Azure Monitor.
+Service Principal is used.
+
+Add Service in Dynatrace and start Monitoring.
