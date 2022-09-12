@@ -1,3 +1,6 @@
+#Script to get all the role assignments of Azure resource
+# Script requires Azure AD module to be pre-installed along with Az PowerShell module
+
 class RoleAssignment {
     [string]$ResourceGroupName
     [string]$Location
