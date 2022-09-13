@@ -35,3 +35,24 @@ In this case, user account should be MFA disabled.
 #Another approach is to use TOTP
 https://stackoverflow.com/questions/73698316/how-to-generate-oauth-2-0-token-using-totp
 
+Steps to login to site with OAuth 2.0 MFA enabled & TOTP approach:
+
+- Create a user & get the username & password 
+- Enable the MFA 
+- Open the https://mysignins.microsoft.com/ & change Authentication type to Authenticator app 
+  so that we can generate the OTP from the software.
+- Also, copy the secret to generate the OTP.
+- How to get the secret?
+  - Login to mysignins.microsoft.com
+  - Go to security - change to Authenticator app - Can't scan image and copy the secret.  
+- Use that secret in here to generate OTP
+   
+  import pyotp
+
+  totp = pyotp.TOTP('secret')
+
+  otp = totp.now()
+
+  print("Current OTP:", otp)
+
+- This way we'll be able to login to our sie without any phone authentication
