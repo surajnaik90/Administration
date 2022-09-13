@@ -30,3 +30,8 @@ password: {password}
 scope: openid api://{clientid}/.default
 
 In this case, user account should be MFA disabled.
+
+
+#Another approach is to use TOTP
+https://stackoverflow.com/questions/73698316/how-to-generate-oauth-2-0-token-using-totp
+
