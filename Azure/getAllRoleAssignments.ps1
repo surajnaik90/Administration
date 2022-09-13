@@ -38,7 +38,10 @@ foreach($resourceGroup in $resourceGroupNames) {
             $roleAssignmentInfo.Location = $resourceGroup.Location
             
             $tags = [System.Text.StringBuilder]::new()
-            foreach($tag in $resourceGroup.Tags) {
+            foreach($tag in $resourceGroup.Tags.Keys) {
+               
+               $value = $resourceGroup.Tags[$tag]
+                
                [void]$tags.Append($tag.Name)
             }
             
