@@ -32,10 +32,17 @@ foreach($resourceGroup in $resourceGroupNames) {
             $result = Get-AzureADObjectByObjectId -ObjectIds $roleassignment.ObjectId
 
             $roleAssignmentInfo = [RoleAssignment]::new()
+            
 
             $roleAssignmentInfo.ResourceGroupName = $resourceGroup.ResourceGroupName
             $roleAssignmentInfo.Location = $resourceGroup.Location
-            $roleAssignmentInfo.Tags = $resourceGroup.Tags
+            
+            $tags = [System.Text.StringBuilder]::new()
+            foreach($tag in $resourceGroup.Tags) {
+               [void]$tags.Append($tag.Name)
+            }
+            
+            $roleAssignmentInfo.Tags = $tags
             $roleAssignmentInfo.ResourceName = $resource.Name
             $roleAssignmentInfo.ResourceType = $resource.ResourceType
             $roleAssignmentInfo.RoleAssignmentName = $roleassignment.RoleAssignmentName
