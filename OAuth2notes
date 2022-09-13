@@ -48,11 +48,8 @@ Steps to login to site with OAuth 2.0 MFA enabled & TOTP approach:
 - Use that secret in here to generate OTP
    
   import pyotp
-
   totp = pyotp.TOTP('secret')
-
   otp = totp.now()
-
   print("Current OTP:", otp)
 
 - This way we'll be able to login to our sie without any phone authentication
