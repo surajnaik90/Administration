@@ -59,3 +59,12 @@ foreach($resourceGroup in $resourceGroupNames) {
 }
 
 $roleAssignments | Export-Csv -Path $filePath -NoTypeInformation
+
+$context = Set-AzCurrentStorageAccount -ResourceGroupName "rg" -Name "strgacct"
+
+$audit = @{
+  File             = '.\roleAssignments.csv'
+  Container        = roleassignmentsaudit
+  Blob             = 'roleAssignments.csv'
+}
+Set-AzStorageBlobContent @audit
