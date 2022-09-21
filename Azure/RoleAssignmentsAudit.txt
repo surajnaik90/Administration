@@ -9,5 +9,5 @@ Running Role Assignments Audit script from Azure DevOps
   Connect-AzureAD -TenantId $tenant.ObjectId -ApplicationId  $sp.AppId -CertificateThumbprint $thumb
 - Upload the certificate in Library of Azure DevOps portal - > Pipelines section -> Library -> Secure Files
 - Use Download Secure Files in Azure DevOps pipeline
-- Use cmd line script: and run this in Pipelines: CERTUTIL -f -importpfx "$(Agent.TempDirectory)\cert.pfx"
+- Use cmd line script: and run this in Pipelines: CERTUTIL -f "My" -p "password" -importpfx "$(Agent.TempDirectory)\cert.pfx"
 - THen run the script in Pipeline
