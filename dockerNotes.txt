@@ -1,0 +1,5 @@
+docker images
+docker run -it imageName
+docker ps
+
+Ctrl+D ----- To exit from the container
