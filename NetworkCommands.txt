@@ -1,0 +1,6 @@
+List all ports being used:
+  netstat -a
+  
+IP address of the domain server
+  nslookup www.google.com
+  
