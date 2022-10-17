@@ -43,3 +43,10 @@ sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
 
 #Copy the prometheus.yml to /etc directory
 sudo cp prometheus.yml /etc/prometheus/prometheus.yml
+
+#Change the ownership
+sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
+
+#Copy the prometheus service file & update the ownership
+sudo cp prometheus.service /etc/systemd/system/prometheus.service
+sudo chown prometheus:prometheus /etc/systemd/system/prometheus.service
