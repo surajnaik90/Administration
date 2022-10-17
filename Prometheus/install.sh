@@ -50,3 +50,13 @@ sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
 #Copy the prometheus service file & update the ownership
 sudo cp prometheus.service /etc/systemd/system/prometheus.service
 sudo chown prometheus:prometheus /etc/systemd/system/prometheus.service
+
+#Reload the systemd and start the prometheus service
+sudo systemctl daemon-reload
+sudo systemctl start prometheus
+
+#Check the prometheus service
+sudo systemctl status prometheus
+
+#Access the prometheus service
+#http://<prometheus-ip>:9090/graph
