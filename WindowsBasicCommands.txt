@@ -1,0 +1,5 @@
+//To know the CPU architecture
+echo %PROCESSOR_ARCHITECTURE%
+
+//wmic - windows management instrumentation
+wmic os get architecture
