@@ -34,8 +34,8 @@ sudo chown prometheus:prometheus /usr/local/bin/promtool
 
 
 #Copy config files to /etc directory
-sudo cp -r prometheus-files/consoles /etc/prometheus
-sudo cp -r prometheus-files/console_libraries /etc/prometheus
+sudo cp -r prometheus/consoles /etc/prometheus
+sudo cp -r prometheus/console_libraries /etc/prometheus
 
 #Make prometheus the owner of those directories
 sudo chown -R prometheus:prometheus /etc/prometheus/consoles
