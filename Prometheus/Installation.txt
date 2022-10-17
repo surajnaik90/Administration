@@ -1,0 +1,5 @@
+On Windows:
+
+
+Run this to start:
+./prometheus --config.file=prometheus.yml
