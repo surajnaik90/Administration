@@ -10,7 +10,7 @@ curl -LO https://github.com/prometheus/prometheus/releases/download/v2.39.1/prom
 #-f is necessary oherwise it won't read archive
 tar -xvf prometheus-2.39.1.linux-amd64.tar.gz
 
-mv prometheus-2.39.1.linux-amd64 prometheus
+mv prometheus-2.39.1.linux-amd64/** prometheus
 
 cd prometheus
 
@@ -26,8 +26,8 @@ sudo chown prometheus:prometheus /etc/prometheus
 sudo chown prometheus:prometheus /var/lib/prometheus
 
 //Copy binaries to ust/local/bindirectory
-sudo cp prometheus/prometheus-2.39.1.linux-amd64/prometheus /usr/local/bin/
-sudo cp prometheus/prometheus-2.39.1.linux-amd64/promtool /usr/local/bin/
+sudo cp prometheus/prometheus /usr/local/bin/
+sudo cp prometheus/promtool /usr/local/bin/
 
 #Make promeheus the owner of those directories
 sudo chown prometheus:prometheus /usr/local/bin/prometheus
@@ -35,8 +35,8 @@ sudo chown prometheus:prometheus /usr/local/bin/promtool
 
 
 #Copy config files to /etc directory
-sudo cp -r prometheus/prometheus-2.39.1.linux-amd64/consoles /etc/prometheus
-sudo cp -r prometheus/prometheus-2.39.1.linux-amd64/console_libraries /etc/prometheus
+sudo cp -r prometheus/consoles /etc/prometheus
+sudo cp -r prometheus/console_libraries /etc/prometheus
 
 #Make prometheus the owner of those directories
 sudo chown -R prometheus:prometheus /etc/prometheus/consoles
