@@ -25,7 +25,7 @@ sudo mkdir /var/lib/prometheus
 sudo chown prometheus:prometheus /etc/prometheus
 sudo chown prometheus:prometheus /var/lib/prometheus
 
-//Copy binaries to ust/local/bindirectory
+#Copy binaries to ust/local/bindirectory
 sudo cp prometheus /usr/local/bin/
 sudo cp promtool /usr/local/bin/
 
