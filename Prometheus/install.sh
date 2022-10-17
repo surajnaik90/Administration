@@ -3,7 +3,7 @@
 #Update repositories
 sudo apt update
 
-mkdir prometheus
+mkdir -p prometheus
 
 curl -# -O https://github.com/prometheus/prometheus/releases/download/v2.39.1/prometheus-2.39.1.linux-amd64.tar.gz
 
