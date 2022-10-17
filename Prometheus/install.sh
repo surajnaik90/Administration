@@ -26,17 +26,16 @@ sudo chown prometheus:prometheus /etc/prometheus
 sudo chown prometheus:prometheus /var/lib/prometheus
 
 //Copy binaries to ust/local/bindirectory
-sudo cp prometheus/prometheus /usr/local/bin/
-sudo cp prometheus/promtool /usr/local/bin/
+sudo cp prometheus /usr/local/bin/
+sudo cp promtool /usr/local/bin/
 
 #Make promeheus the owner of those directories
 sudo chown prometheus:prometheus /usr/local/bin/prometheus
 sudo chown prometheus:prometheus /usr/local/bin/promtool
 
-
 #Copy config files to /etc directory
-sudo cp -r prometheus/consoles /etc/prometheus
-sudo cp -r prometheus/console_libraries /etc/prometheus
+sudo cp -r consoles /etc/prometheus
+sudo cp -r console_libraries /etc/prometheus
 
 #Make prometheus the owner of those directories
 sudo chown -R prometheus:prometheus /etc/prometheus/consoles
