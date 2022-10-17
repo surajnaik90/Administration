@@ -24,3 +24,7 @@ rm -r ** -f
 /etc - Place where linux system's config files live.
 /var/lib - Place for applicatio state
 /usr/local/bin - Contains binaries of third party apps.
+
+
+vi editor:
+Escape & :wq will save and close the file
