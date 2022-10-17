@@ -35,3 +35,10 @@ ls -l file.sh
 
 #Assign execute permission (if not: sh can't open error)
 chmod +x file.sh
+
+#Delete a user
+userdel username
+
+#Kill a pid
+kill pid
+
