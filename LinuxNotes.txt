@@ -8,6 +8,8 @@ Package Manager Tools:
       
       Examples: yum install nginx
                 dnf install nginx
+                
+   Ubuntu: sudo apt update
 
 Print top 10 lines:
    
