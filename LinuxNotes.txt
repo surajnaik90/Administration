@@ -28,3 +28,10 @@ rm -r ** -f
 
 vi editor:
 Escape & :wq will save and close the file
+
+
+#Permission of a file
+ls -l file.sh
+
+#Assign execute permission (if not: sh can't open error)
+chmod +x file.sh
