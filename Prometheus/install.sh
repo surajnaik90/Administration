@@ -40,3 +40,6 @@ sudo cp -r prometheus/console_libraries /etc/prometheus
 #Make prometheus the owner of those directories
 sudo chown -R prometheus:prometheus /etc/prometheus/consoles
 sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
+
+#Copy the prometheus.yml to /etc directory
+sudo cp prometheus.yml /etc/prometheus/prometheus.yml
