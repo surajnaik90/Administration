@@ -19,3 +19,16 @@ sudo useradd --no-create-home --shell /bin/false prometheus
 #Create config files directory & application state directory
 sudo mkdir /etc/prometheus
 sudo mkdir /var/lib/prometheus
+
+#Make prometheus user the owner of prometheus
+sudo chown prometheus:prometheus /etc/prometheus
+sudo chown prometheus:prometheus /var/lib/prometheus
+
+//Copy binaries to ust/local/bindirectory
+sudo cp prometheus/prometheus /usr/local/bin/
+sudo cp prometheus/promtool /usr/local/bin/
+
+#Make promeheus the owner of those directories
+sudo chown prometheus:prometheus /usr/local/bin/prometheus
+sudo chown prometheus:prometheus /usr/local/bin/promtool
+
