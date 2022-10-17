@@ -19,3 +19,7 @@ chmod 664 - sets read and write permissions
 
 #Deleter all files and folders in a directory linux
 rm -r ** -f
+
+
+/etc - Place where linux system's config files live.
+/var/lib - Place for applicatio state
