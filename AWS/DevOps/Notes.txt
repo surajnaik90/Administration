@@ -1,0 +1,13 @@
+#Connecting VS Code to AWS CodeCommit
+
+VS Code -> Terminal -> New Terminal -> Git (set to git bash)
+Run:
+git config --global user.name “Your Name”
+git config --global user.email test@example.com
+
+git --version
+
+
+2)We should create an IAM user for accessing an IAM user. Federated access won't work to push code.
+https://jinathp.medium.com/connect-to-aws-codecommit-from-visual-studio-code-ecb4e5e58e1
+Managed policy: AWSCodeCommitPowerUser
