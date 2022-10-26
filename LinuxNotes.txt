@@ -49,3 +49,7 @@ grep stringtosearch filename
 
 #Check Apache Version
 httpd -v
+
+
+#Apache path
+/usr/local/apache2/
