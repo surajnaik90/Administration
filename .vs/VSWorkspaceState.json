@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Azure",
-    "\\Dynatrace",
-    "\\Prometheus"
+    "\\AWS",
+    "\\AWS\\DevOps"
   ],
+  "SelectedNode": "\\AWS\\DevOps\\Notes.txt",
   "PreviewInSolutionExplorer": false
 }

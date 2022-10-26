@@ -1,0 +1,9 @@
+#Diable http trace in Apache config
+go to cd /usr/local/apache2/conf/httpd.conf
+
+Add the below lines
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+
+https://www.techstacks.com/howto/disable-tracetrack-in-apache-httpd.html
