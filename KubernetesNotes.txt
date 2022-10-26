@@ -6,6 +6,9 @@ kubectl config view
 
 kubectl get pods --namespace ""
 
+#Login to a pod
+kubectl exec -n "namespace-name" "pod-name" -it bash
+
 //Accessing the dashboard
 kubectl proxy
 
