@@ -53,3 +53,4 @@ httpd -v
 
 #Apache path
 /usr/local/apache2/
+Conf file path: /usr/local/apache2/
