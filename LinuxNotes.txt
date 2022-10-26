@@ -44,3 +44,4 @@ kill pid
 
 #Search a string
 grep -r "stringtosearch" /
+grep stringtosearch filename
