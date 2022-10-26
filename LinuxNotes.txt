@@ -42,3 +42,5 @@ userdel username
 #Kill a pid
 kill pid
 
+#Search a string
+grep -r "stringtosearch" /
