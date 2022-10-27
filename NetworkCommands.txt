@@ -6,3 +6,4 @@ IP address of the domain server
   
 #Check the ARP cache
 arp -a
+arp -s ipaddress macaddress  -- Creates a static entry in local machine arp cache.
