@@ -1,1 +1,5 @@
-
+AWS Global Accelerator:
+ - Improves the latency by 60% by using Amazon's own network.
+ - If we have sites deployed in 2 regions then if one region is down, it routes the traffic to the live region. That's the benefit it brings in to the table.
+ 
+ 
