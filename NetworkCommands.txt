@@ -4,3 +4,5 @@ List all ports being used:
 IP address of the domain server
   nslookup www.google.com
   
+#Check the ARP cache
+arp -a
