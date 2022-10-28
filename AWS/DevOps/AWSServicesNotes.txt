@@ -10,6 +10,8 @@ https://yegortokmakov.medium.com/cross-region-disaster-recovery-with-amazon-elas
 AWS Route 53 - Highly Reliable and Scalable DNS Service
                We can create a record set to  
 
+The name 53 because the DNS servers respond to queries on port 53 so.
+
 There are different routing policies that are offered by Route 53
 
 - Failover routing - If primary endpoint fails, then we can make it to point to secondary endpoint.
