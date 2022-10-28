@@ -1,5 +1,16 @@
-AWS Global Accelerator:
+AWS Global Accelerator: (Main thing is we can use Amazon network to increase the performance otherwise through public network
+it would be delayed). So, far latency intended application this service can be used.
+
  - Improves the latency by 60% by using Amazon's own network.
- - If we have sites deployed in 2 regions then if one region is down, it routes the traffic to the live region. That's the benefit it brings in to the table.
+ - If we have sites deployed in 2 regions then if one region is down, it routes the traffic to the live region. 
+ That's the benefit it brings in to the table.
  
  
+AWS Route 53 - Highly Reliable and Scalable DNS Service
+               We can create a record set to  
+
+There are different routing policies that are offered by Route 53
+
+- Failover routing - If primary endpoint fails, then we can make it to point to secondary endpoint.
+- Latency routing
+- Georouting
