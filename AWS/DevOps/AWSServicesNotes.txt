@@ -6,6 +6,7 @@ it would be delayed). So, far latency intended application this service can be u
  That's the benefit it brings in to the table.
  
  
+https://yegortokmakov.medium.com/cross-region-disaster-recovery-with-amazon-elastic-container-service-782bcd007102
 AWS Route 53 - Highly Reliable and Scalable DNS Service
                We can create a record set to  
 
