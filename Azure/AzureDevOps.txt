@@ -5,6 +5,7 @@ Azure Repos Migration:
 - During migration, teams would still continue using the repos ? If so, we can setup some cloned repos for them to continue working.
 - Who all are the stakeholders of the repos as we need to plan the commnication for the migration.
 - In how many phases do we have to do this migration?
+- Do you expect some similar migrations in the future then we can plan on the automation/building pipelines to do this migration.
 - Are you expecting some kind of automation in this migration ? or is it fine if we do it through Azure DevOps UI?
 - If automation then we can use Azure CLI commands to migrate. This would not be necessary at this point as this is one time we beleive? 
   We can still develop scripts to do this but may be we can consider this as a second priority. 
