@@ -1,14 +1,17 @@
 Azure Repos Migration:
 
 - How many Azure Repos do we need to migrate?
-- Are you expecting some kind of automation in this migration ? or is it fine if we do it through UI?
-- If automation then we can use Azure CLI commands to migrate. This would not be necessary as this is one time we beleive? 
-  We can still develop scripts to do this but may be as 
-- We would need project administrator permission (at destination azure devops account) to import a repo in the new account. 
+- How big are the repos in terms of number of files? and the total size of all the files in those repos??
+- During migration, teams would still continue using the repos ? If so, we can setup some cloned repos for them to continue working.
+- Who all are the stakeholders of the repos as we need to plan the commnication for the migration.
+- In how many phases do we have to do this migration?
+- Are you expecting some kind of automation in this migration ? or is it fine if we do it through Azure DevOps UI?
+- If automation then we can use Azure CLI commands to migrate. This would not be necessary at this point as this is one time we beleive? 
+  We can still develop scripts to do this but may be we can consider this as a second priority. 
+- We would need project administrator permission to import a repo in the new account. 
 - We would need permissions to create a PAT token to migrate. Can we try creating a PAT token and 
   check if we can clone it in some other project in the same account may be?
 - Before migrating the actual repo-
   - We are thinking of creating a test repo (cloned version of the actual repo) in the test project in the same account and then we will migrate 
     this cloned repo and check whether all histories are getting migrated correctly.
-    Once succeeds, we will do the migration of the repos 1 at a time. 
-- 
+    Once succeeds, we will do the migration of the repos 1 at a time may be.  
