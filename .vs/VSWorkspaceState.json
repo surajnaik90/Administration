@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\AWS",
-    "\\AWS\\DevOps"
+    "\\AWS\\DevOps",
+    "\\Vulnerabilities"
   ],
-  "SelectedNode": "\\AWS\\DevOps\\Notes.txt",
   "PreviewInSolutionExplorer": false
 }
