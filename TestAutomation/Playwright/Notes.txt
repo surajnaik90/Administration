@@ -1,2 +1,18 @@
 pip install pytest-playwright
 
+Installation:
+
+>playwright install (downloads all the browsers)
+
+Downloading Chromium 108.0.5359.29 (playwright build v1033) from https://playwright.azureedge.net/builds/chromium/1033/chromium-win64.zip
+109.5 Mb [====================] 100% 0.0s
+Chromium 108.0.5359.29 (playwright build v1033) downloaded to C:\Users\user\AppData\Local\ms-playwright\chromium-1033
+Downloading FFMPEG playwright build v1008 from https://playwright.azureedge.net/builds/ffmpeg/1008/ffmpeg-win64.zip
+1.4 Mb [====================] 100% 0.0s
+FFMPEG playwright build v1008 downloaded to C:\Users\user\AppData\Local\ms-playwright\ffmpeg-1008
+Downloading Firefox 106.0 (playwright build v1364) from https://playwright.azureedge.net/builds/firefox/1364/firefox-win64.zip
+78.3 Mb [====================] 100% 0.0s
+Firefox 106.0 (playwright build v1364) downloaded to C:\Users\user\AppData\Local\ms-playwright\firefox-1364
+Downloading Webkit 16.4 (playwright build v1735) from https://playwright.azureedge.net/builds/webkit/1735/webkit-win64.zip
+73.6 Mb [====================] 100% 0.0s
+Webkit 16.4 (playwright build v1735) downloaded to C:\Users\user\AppData\Local\ms-playwright\webkit-1735

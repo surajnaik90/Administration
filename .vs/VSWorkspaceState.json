@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\AWS\\DevOps",
+    "\\TestAutomation",
+    "\\TestAutomation\\Playwright",
     "\\Vulnerabilities"
   ],
+  "SelectedNode": "\\TestAutomation\\Playwright\\Notes.txt",
   "PreviewInSolutionExplorer": false
 }
