@@ -1,0 +1,27 @@
+What is bigquery
+JSON to BigQuery - NO standard templates available. 
+Java code written for custom template creation
+
+BQ Table - Where we want to store?
+
+GCP
+Dataflow pipelines - Integration project p01 - project
+data quality metadata - for whether input parameters are passed or not
+
+gccloud auth login
+
+KCC Piplelines - Help jars
+
+
+Google CLoud Build
+
+Dataflow - have unique service accounts
+
+miro boards
+
+Airflow - 3 files
+
+dag, plugin, resource fil
+
+
+dag - extract the data and store the json gcs
