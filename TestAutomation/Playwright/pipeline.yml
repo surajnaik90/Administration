@@ -1,0 +1,34 @@
+trigger:
+- dev
+
+pool:
+  vmImage: windows-latest
+  
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: npx playwright install
+  displayName: 'Install Playwright'
+
+- script: npm install -D @playwright/test |
+          npm install authenticator --save
+  displayName: 'Install Playwright Test Module'
+
+- script: cd ./tests/ |
+          npx playwright test --config=./playwright-config.js
+  displayName: 'Execute playwright tests'
+
+- task: CopyFiles@2
+  displayName: 'Copy test results'
+  inputs:
+    sourceFolder: ./testReports/
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish test ouput'
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
