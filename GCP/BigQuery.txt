@@ -1,0 +1,9 @@
+BigQuery is an enterprise datawarehouse to manage and analyze data with some awesome built-in features.
+  - We can use SQL query itself.
+  - Can query terabytes in seconds & petabytes in minutes.
+
+Dataset:
+  Container to control access to tables and views.
+  - Create atleast one dataset before loading data into BigQuery.
+ 
+ 
