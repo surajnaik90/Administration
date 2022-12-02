@@ -1,0 +1,4 @@
+Running a DAG in GCP Composer:
+
+ - Upload DAG (json ?) to cloud storage. 
+ - 
