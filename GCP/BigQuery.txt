@@ -7,3 +7,5 @@ Dataset:
   - Create atleast one dataset before loading data into BigQuery.
  
  
+Copying Datasets:
+- Go to Big Query -> Dataset -> Copy
