@@ -16,3 +16,10 @@ Firefox 106.0 (playwright build v1364) downloaded to C:\Users\user\AppData\Local
 Downloading Webkit 16.4 (playwright build v1735) from https://playwright.azureedge.net/builds/webkit/1735/webkit-win64.zip
 73.6 Mb [====================] 100% 0.0s
 Webkit 16.4 (playwright build v1735) downloaded to C:\Users\user\AppData\Local\ms-playwright\webkit-1735
+
+
+
+Notes:
+
+- Test timeout of 30000ms exceeded:
+      Configute it in config.json:  timeout: 120 * 1000
