@@ -1,0 +1,34 @@
+1) Create a new simple html file called index.html
+<html>
+<title>DR Demo</title>
+<h1>Hi, I am up from Ireland region</h1>
+</html>
+
+2) Create a docker file
+FROM NGINX:alpine
+COPY . /usr/share/nginx/html
+
+3) Build the docker image
+   docker build -t ngindemo:v1 .
+ 
+4) Tag the image
+   docker tag ngindemo:v1 aws_account_id.dkr.ecr.region.amazonaws.com/my-repository:tag
+ 
+5) Push the image to ecr
+   docker push aws_account_id.dkr.ecr.region.amazonaws.com/my-repository:tag
+   
+6) Create a new Security group:
+    - Allow all traffic for both inbound and outbound
+    
+7) Create a new target group
+   - Choose target type as IP addresses
+   - TCP : 80 port
+   - Health Check Port: Traffic Port
+   
+8) Create a load balancer
+
+   - Application Load Balancer
+   - Scheme: Internal
+   - HTTP: 80 port
+   
+   
