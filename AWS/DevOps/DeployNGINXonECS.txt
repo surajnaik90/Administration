@@ -31,4 +31,15 @@ COPY . /usr/share/nginx/html
    - Scheme: Internal
    - HTTP: 80 port
    
-   
+ 9) Create a task definition
+ 
+    - container port: 80
+ 
+ 10) Create an ecs cluster
+ 
+ 11) Deploy service
+ 
+    - Choose the lb and listener already created
+    - Choose the target group already created
+    - Choose the security group
+    - Deploy - should work
