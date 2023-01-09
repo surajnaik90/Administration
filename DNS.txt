@@ -1,1 +1,6 @@
 When we hit a URL it goes to Resolver Server -> Root Server -> TLD Servers -> Authoritative Server/Non-Authoritative
+
+nslookup
+
+
+dig +trace address
